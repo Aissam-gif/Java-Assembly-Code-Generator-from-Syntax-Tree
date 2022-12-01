@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" style="-fx-background-radius: 1em;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tree.compilationproject.MainPageController">
+   <children>
+      <BorderPane prefHeight="844.0" prefWidth="1055.0" style="-fx-background-color: #474C5F; -fx-background-radius: 1em;">
+         <center>
+            <BorderPane prefHeight="584.0" prefWidth="518.0" style="-fx-background-color: #FBFCFC; -fx-background-radius: 1em;" BorderPane.alignment="CENTER">
+               <top>
+                  <Pane prefHeight="124.0" prefWidth="548.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="lblName1" layoutX="45.0" layoutY="37.0" text="Code Generation">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblGreeting1" layoutX="45.0" layoutY="71.0" text="A simple code generator can generate code from an syntax tree merely by walking the tree" textFill="#989aad" />
+                     </children>
+                  </Pane>
+               </top>
+               <bottom>
+                  <BorderPane prefHeight="167.0" prefWidth="542.0" style="-fx-background-radius: 10em; -fx-border-radius: 10em;" BorderPane.alignment="CENTER">
+                     <center>
+                        <ScrollPane prefHeight="78.0" prefWidth="495.0" style="-fx-border-color: #FBFCFC;" BorderPane.alignment="CENTER">
+                           <content>
+                              <VBox fx:id="vTaskItemsupcoming" alignment="TOP_CENTER" prefHeight="137.0" prefWidth="520.0" style="-fx-background-color: #FBFCFC;">
+                                 <children>
+                                    <Button fx:id="generateTree" mnemonicParsing="false" opacity="0.7" prefHeight="25.0" prefWidth="108.0" style="-fx-background-color: #b1cef1; -fx-background-radius: 1em;" text="Generate" textFill="#031c3c" />
+                                 </children>
+                              </VBox>
+                           </content>
+                        </ScrollPane>
+                     </center>
+                     <top>
+                        <TextArea fx:id="logsText" prefHeight="389.0" prefWidth="548.0" style="-fx-border-radius: 10em;" BorderPane.alignment="CENTER" />
+                     </top>
+                  </BorderPane>
+               </bottom>
+               <center>
+                  <BorderPane prefHeight="274.0" prefWidth="542.0" BorderPane.alignment="CENTER">
+                     <center>
+                        <ScrollPane prefHeight="263.0" prefWidth="548.0" style="-fx-border-color: #FBFCFC;">
+                           <content>
+                              <VBox fx:id="vTaskItems" alignment="TOP_CENTER" prefHeight="237.0" prefWidth="541.0" style="-fx-background-color: #FBFCFC;">
+                                 <padding>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="112.0" prefWidth="505.0">
+                                       <children>
+                                          <VBox fx:id="valueContainer" alignment="CENTER" prefHeight="165.0" prefWidth="179.0">
+                                             <children>
+                                                <TextField fx:id="expressionValue" prefHeight="34.0" prefWidth="260.0" promptText="Enter node value ..." style="-fx-background-color: #989AD; -fx-border-color: #35ACF1; -fx-background-radius: 1em;" styleClass="text-input">
+                                                   <padding>
+                                                      <Insets left="15.0" />
+                                                   </padding>
+                                                </TextField>
+                                                <Label />
+                                                <Button fx:id="applyValueBtn" mnemonicParsing="false" opacity="0.7" prefHeight="25.0" prefWidth="108.0" style="-fx-background-color: #b1cef1; -fx-background-radius: 1em;" text="Apply" />
+                                             </children>
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                          </VBox>
+                                          <ListView fx:id="choiceList" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="118.0" prefWidth="161.0">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </ListView>
+                                          <VBox alignment="CENTER" prefHeight="135.0" prefWidth="181.0" spacing="15.0">
+                                             <children>
+                                                <Button fx:id="choiceApplyBtn" mnemonicParsing="false" opacity="0.7" prefHeight="25.0" prefWidth="108.0" style="-fx-background-color: #b1cef1; -fx-background-radius: 1em;" text="Add" textFill="#031c3c" />
+                                                <Button fx:id="nodeDeleteBtn" mnemonicParsing="false" opacity="0.7" prefHeight="25.0" prefWidth="108.0" style="-fx-background-color: #b1cef1; -fx-background-radius: 1em;" text="Delete node" textFill="#031c3c" />
+                                             </children>
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                          </VBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="20.0" top="20.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </ScrollPane>
+                     </center>
+                     <top>
+                        <Label fx:id="lblToday" BorderPane.alignment="CENTER_LEFT">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" left="45.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </top>
+                  </BorderPane>
+               </center>
+            </BorderPane>
+         </center>
+         <left>
+            <Pane prefHeight="684.0" prefWidth="497.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="lblName" layoutX="91.0" layoutY="60.0" text="Welcome HssasBi !" textFill="#fbfcfc">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblGreeting" layoutX="90.0" layoutY="96.0" text="Welcome back to your workspace  ;-)" textFill="#989aad" />
+                  <Button fx:id="btnEX" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="35.0" style="-fx-background-color: #989AAD; -fx-background-radius: 1em;" text="--" textFill="#cdcdcd" />
+                  <TreeView fx:id="treeView" layoutX="94.0" layoutY="162.0" prefHeight="579.0" prefWidth="256.0" style="-fx-background-color: #ffffff;">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </TreeView>
+               </children>
+            </Pane>
+         </left>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </BorderPane>
+   </children>
+</AnchorPane>
